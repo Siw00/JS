@@ -1,0 +1,297 @@
+2 (a)- Document .write() & prompt method
+<html>
+<script>
+//JavaScript program to swap two variables using Document.write method
+//take input from the users
+var a = parseInt(prompt('Enter the first variable: '))
+var b = parseInt(prompt('Enter the second variable: '))
+document.write("Swapping Two Numbers"+"<br>")
+document.write("____________________"+"<br>"+"<br>")
+document.write(" Before Swapping"+"<br>")
+document.write(" Value of A before Swapping : "+a+"<br>")
+document.write(" Value of B before Swapping : "+b+"<br>")
+b=a+b
+a=b-a
+b=b-a
+document.write("<br>")
+document.write("<br>")
+document.write(" After Swapping"+"<br>")
+document.write(" Value of A after Swapping : "+a+"<br>")
+document.write(" Value of B after Swapping : "+b)
+</script></html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>innerHTML</title>
+</head>
+
+
+
+
+2(b)- innerHTML()
+<body>
+    <center>
+        <h1>InnerHtml Web Page Design</h1>
+    </center>
+    <br><br>
+    <script>
+        function changeColor() {
+            var newColor = document.getElementById('colorPicker').value;
+            document.getElementById('colorMsg').style.background = newColor;
+        }
+    </script>
+    <center>
+        <div id="colorMsg" style="font-size: 18px; width: 150px; height: 100px; padding: 5px;" align="center">
+            Choose a background color...
+        </div>
+        <select id="colorPicker" onchange="changeColor()" align="center">
+            <option value="transparent">None</option>
+            <option value="yellow">Yellow</option>
+            <option value="salmon">Salmon</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="limegreen">Lime Green</option>
+        </select>
+    </center>
+    <br><br>
+    <center>
+        <h1>--------------------------------------------------------------</h1>
+    </center>
+    <br><br>
+    <script>
+        function showMsg() {
+            var userInput = document.getElementById('userInput').value;
+            document.getElementById('userMsg').innerHTML = userInput;
+        }
+    </script>
+    <input type="text" maxlength="40" id="userInput" onkeyup="showMsg()" placeholder="Enter text here...">
+    <p id="userMsg"></p>
+</body>
+
+</html>
+
+
+
+
+2(c)- Console.log
+<!DOCTYPE html>
+<html>
+<body>
+    <center>
+        <h2>Console.log Program</h2>
+    </center>
+    <label for="fname">Value of A:</label>
+    <input type="text" id="fname" name="fname" size="50"><br><br>
+    <label for="fname1">Value of B:</label>
+    <input type="text" id="fname1" name="fname1" size="50"><br><br>
+    <input type="button" value="Submit" onclick="sum()">
+    <script>
+        function sum() {
+            let a = parseInt(fname.value);
+            let b = parseInt(fname1.value);
+            c = a + b;
+            console.log("Sum of Two Numbers: " + c);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+# 3.1 Program using Conditional Statement  
+<!DOCTYPE html>
+<html>
+
+<body>
+    <center>
+        <h2>Program using Conditional Statement</h2>
+    </center>
+    <label for="fname">Value of A:</label>
+    <input type="text" id="fname" name="fname" size="50"><br><br>
+    <label for="fname1">Value of B:</label>
+    <input type="text" id="fname1" name="fname1" size="50"><br><br>
+    <input type="button" value="Calculation" onclick="switch1()">
+    <input type="button" value="Clear" onclick="clear1()">
+    <script>
+        function switch1() {
+            let a = parseInt(fname.value);
+            let b = parseInt(fname1.value);
+            let result;
+            if (!a || !b) {
+                alert("Value is missing, please retry: Enter the A and B value");
+            } else {
+                d = parseInt(prompt("Enter the choice:\n0: Add\n1: Subtract\n2: Multiply\n3: Divide"));
+                switch (d) {
+                    case 0:
+                        result = a + b;
+                        break;
+                    case 1:
+                        result = a - b;
+                        break;
+                    case 2:
+                        result = a * b;
+                        break;
+                    case 3:
+                        result = a / b;
+                        break;
+                }
+                document.getElementById("printvalue").innerHTML = "Resultant value: " + result;
+            }
+        }
+
+        function clear1() {
+            fname.value = "";
+            fname1.value = "";
+            document.getElementById("printvalue").innerHTML = "";
+        }
+    </script>
+    <br><br>
+    <h3>OUTPUT</h3>
+    <p id="printvalue"></p>
+</body>
+
+</html>
+
+4 (a)- Fibonacci program using While looping statement
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Prime</title>
+</head>
+
+<body>
+    <center>
+        <h1>Fibonacci program using While looping statement</h1>
+    </center>
+    Enter a number: <input id="num"><br><br>
+    <button onclick="fib()">Fibonacci</button>
+
+    <script type="text/javascript">
+        function fib() {
+            var var1 = 0, var2 = 1, var3, range_value;
+            range_value = parseInt(num.value);
+            document.write("Here is the Fibonacci series with " + range_value + " values: ");
+            while (var1 < range_value) {
+                document.write(var1 + " ");
+                var3 = var1 + var2;
+                var1 = var2;
+                var2 = var3;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+4(b)- Factorial program using DO while looping statement
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <center>
+        <h1>Factorial program using DO while looping statement</h1>
+    </center>
+    Enter a number: <input id="num"><br><br>
+    <button onclick="fact()">Factorial</button>
+    <p id="res"></p>
+
+    <script>
+        function fact() {
+            var i = 1, num, f;
+            f = 1;
+            num = document.getElementById("num").value;
+            do {
+                f = f * i;
+                i = i + 1;
+                num = num - 1;
+            } while (num > 0);
+            i = i - 1;
+            document.getElementById("res").innerHTML = "The factorial of the number " + i + " is: " + f;
+        }
+    </script>
+</body>
+</html>
+
+
+
+Program for manipulating string and numbers using expressions
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <h3>Simple Payroll Program using manipulating string and numbers</h3>
+    Enter Employee's First Name: <input type="text" size="40" ng-model="emp_name"><br>
+    Enter Employee's Last Name: <input type="text" size="40" ng-model="emp_lname"><br>
+    Employee ID: <input type="text" size="40" ng-model="emp_id" required/><br>
+    Gender: 
+    <input type="radio" name="gender" value="male" ng-model="emp_gender"> Male
+    <input type="radio" name="gender" value="female" ng-model="emp_gender"> Female 
+    <br><br>
+    Enter Number of Days Worked: <input type="number" size="10" ng-model="days_worked"><br>
+    Enter Daily Rate: <input type="number" size="10" ng-model="daily_rate"><br>
+    -----------------------------------------------------------------------------------------<br>
+    Employee Name: {{ (emp_name + " " + emp_lname) | uppercase }} <br>
+    Employee ID: {{ emp_id }}<br>
+    Gender: {{ emp_gender }}<br>
+    Number of Days Worked: {{ days_worked }}<br>
+    Rate Per Day: {{ daily_rate }}<br>
+    Gross Salary: {{ (days_worked * daily_rate) }} rs
+</body>
+</html>
+
+
+
+Program based on basic angular directives
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <center>
+        <h1>Program based on basic angular directives</h1>
+    </center>
+    <h2>ng-init directives and bind data with expression</h2>
+    <div ng-init="radius=50; PI=3.14">
+        Circumference of a circle of radius 50 is {{ 2*PI*radius }}
+    </div>
+
+    <h2>ng-bind directives</h2>
+    Circle circumference: <span ng-bind="2*PI*radius"></span><br>
+
+    <h2>ng-model directives</h2>
+    <div>
+        <p>Name : <input type="text" ng-model="msg"></p>
+        <p>Hello {{msg}}</p>
+    </div>
+
+    <h2>ng-init directives and ng-repeat directives for array operations</h2>
+    <div ng-init="array=[10,20,30,40]">
+        <ol>
+            <li ng-repeat="x in array">{{ x }}</li>
+        </ol>
+    </div>
+
+    <h2>ng-if directives</h2>
+    <div ng-init="checked=true">
+        New user : <input type="checkbox" ng-model="checked"><br>
+        NAME: <input type="text" ng-if="checked"><br>
+    </div>
+
+    <h2>ng-readonly directives</h2>
+    Read only <input type="text" ng-readonly="checked" value="my programming line"><br>
+
+    <h2>ng-disabled directives</h2>
+    Disabled <input type="text" ng-disabled="checked" value="just see"><br>
+</body>
+</html>
+
+
